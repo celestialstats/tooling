@@ -1,0 +1,9 @@
+postgres:
+  image: postgres:9.6.1
+  ports:
+    - 5432:5432
+  environment:
+    - POSTGRES_PASSWORD=test123
+    - POSTGRES_DB=cs
+  volumes:
+    - /opt/cs/postgresql:/var/lib/postgresql
