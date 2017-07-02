@@ -1,10 +1,9 @@
-version: '2'
+version: '3'
 services:
   cs_rabbit:
     image: rabbitmq:3-management
     container_name: cs_rabbitmq
     hostname: cs_rabbitmq
-    build: .
     ports:
       - "25672:15672"
       - "5671:5671"
@@ -12,3 +11,6 @@ services:
     environment:
       - RABBITMQ_DEFAULT_USER=supremelygood
       - RABBITMQ_DEFAULT_PASS=supremelygood
+      - RABBITMQ_HIPE_COMPILE=1
+    volumes:
+      - /opt/cs/rabbitmq:/var/lib/rabbitmq

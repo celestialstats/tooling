@@ -1,0 +1,67 @@
+version: '3'
+services:
+  cs_redis_s1:
+    image: redis
+    container_name: cs_redis_s1
+    hostname: cs_redis_s1
+    command: redis-server /usr/local/etc/redis/redis.conf
+    build: .
+    ports:
+      - "16401:16401"
+      - "26401:26401"
+    volumes:
+      - /content/cs/redis/slaves/data-01:/data
+      - /content/cs/redis/slaves/logs-01:/logs
+      - /content/cs/redis/slaves/redis-01.conf:/usr/local/etc/redis/redis.conf
+  cs_redis_s2:
+    image: redis
+    container_name: cs_redis_s2
+    hostname: cs_redis_s2
+    command: redis-server /usr/local/etc/redis/redis.conf
+    build: .
+    ports:
+      - "16402:16402"
+      - "26402:26402"
+    volumes:
+      - /content/cs/redis/slaves/data-02:/data
+      - /content/cs/redis/slaves/logs-02:/logs
+      - /content/cs/redis/slaves/redis-02.conf:/usr/local/etc/redis/redis.conf
+  cs_redis_s3:
+    image: redis
+    container_name: cs_redis_s3
+    hostname: cs_redis_s3
+    command: redis-server /usr/local/etc/redis/redis.conf
+    build: .
+    ports:
+      - "16403:16403"
+      - "26403:26403"
+    volumes:
+      - /content/cs/redis/slaves/data-03:/data
+      - /content/cs/redis/slaves/logs-03:/logs
+      - /content/cs/redis/slaves/redis-03.conf:/usr/local/etc/redis/redis.conf
+  cs_redis_s4:
+    image: redis
+    container_name: cs_redis_s4
+    hostname: cs_redis_s4
+    command: redis-server /usr/local/etc/redis/redis.conf
+    build: .
+    ports:
+      - "16404:16404"
+      - "26404:26404"
+    volumes:
+      - /content/cs/redis/slaves/data-04:/data
+      - /content/cs/redis/slaves/logs-04:/logs
+      - /content/cs/redis/slaves/redis-04.conf:/usr/local/etc/redis/redis.conf
+  cs_redis_s5:
+    image: redis
+    container_name: cs_redis_s5
+    hostname: cs_redis_s5
+    command: redis-server /usr/local/etc/redis/redis.conf
+    build: .
+    ports:
+      - "16405:16405"
+      - "26405:26405"
+    volumes:
+      - /content/cs/redis/slaves/data-05:/data
+      - /content/cs/redis/slaves/logs-05:/logs
+      - /content/cs/redis/slaves/redis-05.conf:/usr/local/etc/redis/redis.conf
