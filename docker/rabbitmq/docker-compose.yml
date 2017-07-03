@@ -1,9 +1,10 @@
 version: '3'
 services:
   cs_rabbit:
-    image: rabbitmq:3-management
+    image: cs_rabbitmq:latest
     container_name: cs_rabbitmq
     hostname: cs_rabbit
+    build: .
     ports:
       - "25672:15672"
       - "5671:5671"
