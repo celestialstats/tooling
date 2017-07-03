@@ -1,11 +1,10 @@
 version: '3'
 services:
   cs_redis_m1:
-    image: redis
+    image: redis:latest
     container_name: cs_redis_m1
     hostname: cs_redis_m1
     command: redis-server /usr/local/etc/redis/redis.conf
-    build: .
     ports:
       - "16401:16401"
       - "26401:26401"
@@ -14,11 +13,10 @@ services:
       - /content/cs/redis/masters/logs-01:/logs
       - /content/cs/redis/masters/redis-01.conf:/usr/local/etc/redis/redis.conf
   cs_redis_m2:
-    image: redis
+    image: redis:latest
     container_name: cs_redis_m2
     hostname: cs_redis_m2
     command: redis-server /usr/local/etc/redis/redis.conf
-    build: .
     ports:
       - "16402:16402"
       - "26402:26402"
@@ -27,11 +25,10 @@ services:
       - /content/cs/redis/masters/logs-02:/logs
       - /content/cs/redis/masters/redis-02.conf:/usr/local/etc/redis/redis.conf
   cs_redis_m3:
-    image: redis
+    image: redis:latest
     container_name: cs_redis_m3
     hostname: cs_redis_m3
     command: redis-server /usr/local/etc/redis/redis.conf
-    build: .
     ports:
       - "16403:16403"
       - "26403:26403"
@@ -40,11 +37,10 @@ services:
       - /content/cs/redis/masters/logs-03:/logs
       - /content/cs/redis/masters/redis-03.conf:/usr/local/etc/redis/redis.conf
   cs_redis_m4:
-    image: redis
+    image: redis:latest
     container_name: cs_redis_m4
     hostname: cs_redis_m4
     command: redis-server /usr/local/etc/redis/redis.conf
-    build: .
     ports:
       - "16404:16404"
       - "26404:26404"
@@ -53,11 +49,10 @@ services:
       - /content/cs/redis/masters/logs-04:/logs
       - /content/cs/redis/masters/redis-04.conf:/usr/local/etc/redis/redis.conf
   cs_redis_m5:
-    image: redis
+    image: redis:latest
     container_name: cs_redis_m5
     hostname: cs_redis_m5
     command: redis-server /usr/local/etc/redis/redis.conf
-    build: .
     ports:
       - "16405:16405"
       - "26405:26405"

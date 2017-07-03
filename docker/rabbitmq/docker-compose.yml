@@ -3,14 +3,14 @@ services:
   cs_rabbit:
     image: rabbitmq:3-management
     container_name: cs_rabbitmq
-    hostname: cs_rabbitmq
+    hostname: cs_rabbit
     ports:
       - "25672:15672"
       - "5671:5671"
       - "5672:5672"
     environment:
-      - RABBITMQ_DEFAULT_USER=supremelygood
-      - RABBITMQ_DEFAULT_PASS=supremelygood
+      - RABBITMQ_DEFAULT_USER=SUPER_SECRET_USER_HERE
+      - RABBITMQ_DEFAULT_PASS=SUPER_SECRET_PASS_HERE
       - RABBITMQ_HIPE_COMPILE=1
     volumes:
-      - /opt/cs/rabbitmq:/var/lib/rabbitmq
+      - /content/cs/rabbitmq:/var/lib/rabbitmq
